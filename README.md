@@ -51,6 +51,9 @@ GIF
 Screenshot of generated HTML
 ![screenshot](https://github.com/NathanJamis/TeamProfileGenerator/blob/main/Assets/screenshot.png)
 
+Screenshot of Passing test suite
+![tests](https://github.com/NathanJamis/TeamProfileGenerator/blob/main/Assets/PassingTests.PNG)
+
 ## Questions
 
 For any questions, please contact me by email or through my GitHub page
