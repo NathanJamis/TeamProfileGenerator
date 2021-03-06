@@ -19,7 +19,7 @@ const mgrQuestions = [
         name: "name"
     },
     {
-        type: "input",
+        type: "number",
         message: "Employee ID?",
         name: "id"
     },
@@ -33,7 +33,7 @@ const mgrQuestions = [
         message: "Office number?",
         name: "officeNumber"
     }
-];
+]
 
 const engQuestions = [
     {
@@ -42,7 +42,7 @@ const engQuestions = [
         name: "name"
     },
     {
-        type: "input",
+        type: "number",
         message: "Employee ID?",
         name: "id"
     },
@@ -56,7 +56,7 @@ const engQuestions = [
         message: "Github username?",
         name: "github"
     }
-];
+]
 
 const internQuestions = [
     {
@@ -65,7 +65,7 @@ const internQuestions = [
         name: "name"
     },
     {
-        type: "input",
+        type: "number",
         message: "Employee ID?",
         name: "id"
     },
@@ -79,7 +79,7 @@ const internQuestions = [
         message: "Intern's school?",
         name: "school"
     }
-];
+]
 
 const empInfo = () => {
     inquirer.prompt([
@@ -89,38 +89,38 @@ const empInfo = () => {
             name: "role",
             choices: ["Manager", "Engineer", "Intern"]
         }
-    ]).then(selection => {
-        if (selection.role === "Manager") {
+    ]).then(answer => {
+        if (answer.role === "Manager") {
             mgrInfo();
-        } else if (selection.role === "Engineer") {
+        } else if (answer.role === "Engineer") {
             engInfo();
         } else {
             internInfo();
-        };
+        }
         function mgrInfo() {
             inquirer.prompt(mgrQuestions)
-            .then(selection => {
-                const employee = new Manager(selection.name, selection.role, selection.id, selection.email, selection.officeNumber);
+            .then(answer => {
+                const employee = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
                 teamList.push(employee);
                 addEmployee();
             })
-        };
+        }
         function engInfo() {
             inquirer.prompt(engQuestions)
-            .then(selection => {
-                const employee = new Engineer(selection.name, selection.role, selection.id, selection.email, selection.github);
+            .then(answer => {
+                const employee = new Engineer(answer.name, answer.id, answer.email, answer.github);
                 teamList.push(employee);
                 addEmployee();
             })
-        };
+        }
         function internInfo() {
             inquirer.prompt(internQuestions)
-            .then(selection => {
-                const employee = new Intern(selection.name, selection.role, selection.id, selection.email, selection.school);
+            .then(answer => {
+                const employee = new Intern(answer.name, answer.id, answer.email, answer.school);
                 teamList.push(employee);
                 addEmployee();
-            })
-        };
+            }).catch(err => console.log(err));
+        }
     })
 };
 const addEmployee = () => {
@@ -132,11 +132,12 @@ const addEmployee = () => {
         }
     ]).then(response => {
         if (response.addEmployee === true) {
+            console.log("Yes.");
             empInfo();
         } else {
             HTML += render(teamList);
             fs.writeFile(distPath, HTML, err => console.log(err))
-            console.log("Team list has been created!")
+            console.log("Team list has been created!");
             return;
         }
     })
