@@ -14,6 +14,7 @@ a node.js application that will generate a Team list using OOP and TDD principle
 * [Contribution](#contribution)
 * [Testing](#testing)
 * [Questions](#questions)
+* [Walkthrough](#walkthrough)
 
 ## Installation
 
@@ -60,6 +61,6 @@ For any questions, please contact me by email or through my GitHub page
 * [jamis.walsh@gmail.com](mailto:jamis.walsh@gmail.com)
 * [NathanJamis](https://github.com/NathanJamis)
 
-## Walkthrough Video
+## Walkthrough
 
 [Link to video](https://youtu.be/PYEMgtVEmZ8)
