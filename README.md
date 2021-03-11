@@ -59,3 +59,7 @@ Screenshot of Passing test suite
 For any questions, please contact me by email or through my GitHub page
 * [jamis.walsh@gmail.com](mailto:jamis.walsh@gmail.com)
 * [NathanJamis](https://github.com/NathanJamis)
+
+## Walkthrough Video
+
+[Link to video](https://youtu.be/PYEMgtVEmZ8)
